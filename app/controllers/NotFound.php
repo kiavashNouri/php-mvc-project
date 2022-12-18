@@ -1,11 +1,11 @@
 <?php
 
 
-class NotFound
+class NotFound extends Controller
 {
     public function index()
     {
-        echo "<h2 style='width: 50%; margin: 0 auto'>Not Found Controller (404)</h2>";
+        return $this->view('error/404');
     }
 
 }

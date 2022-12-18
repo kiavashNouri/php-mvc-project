@@ -3,5 +3,8 @@
 
 class Home
 {
+    public function index()
+    {
 
+    }
 }
