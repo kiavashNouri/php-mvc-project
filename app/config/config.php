@@ -1,6 +1,6 @@
 <?php
-const address="http://localhost/mvc";
-
+//const address="http://localhost/mvc2";
+define('urlRoot','http://localhost/mvc2');
 define('AppRoot',dirname(__DIR__));
 
 const DB_HOST = 'localhost';
