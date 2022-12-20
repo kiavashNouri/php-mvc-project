@@ -15,25 +15,28 @@ class Database
     public function __construct()
     {
         try {
-            $this->dbh = new PDO("mysql:host=$this->localhost;dbname=$this->db;charset=utf8,$this->user,$this->password");
+            $this->dbh = new PDO("mysql:host=$this->localhost;dbname=$this->db", $this->user, $this->password);
             $this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
+            echo "error: " . $e->getMessage() . "<br>";
 
         }
+
     }
 
     public function query($sql)
     {
 
 //        select * from slider  where id=:id
-       $this->stmt=$this->dbh->prepare($sql);
+
+        $this->stmt = $this->dbh->prepare($sql);
 
     }
 
-    public function bind($params,$value)
-     {
-        $this->stmt->bindParam($params,$value);
+    public function bind($params, $value)
+    {
+        $this->stmt->bindParam($params, $value);
 
     }
 

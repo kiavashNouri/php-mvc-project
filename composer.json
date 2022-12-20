@@ -1,5 +1,6 @@
 {
     "require": {
-        "jenssegers/blade": "^1.4"
+        "jenssegers/blade": "^1.4",
+      "ext-pdo": "*"
     }
 }
