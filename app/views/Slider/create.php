@@ -35,6 +35,7 @@
                     <input type="submit" class="btn btn-success mt-3" value="ذخیره">
                 </div>
             </form>
+            <a href="<?php echo urlRoot?>/public/sliders/details" class="btn btn-info mt-4">جزئیات</a>
         </div>
     </div>
 </div>

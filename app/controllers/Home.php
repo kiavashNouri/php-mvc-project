@@ -1,10 +1,10 @@
 <?php
 
 
-class Home
+class Home extends controller
 {
     public function index()
     {
-        var_dump(new Database());
+        return $this->view('home/index');
     }
 }

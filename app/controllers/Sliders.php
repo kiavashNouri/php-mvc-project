@@ -13,7 +13,9 @@ class Sliders extends Controller
 
     public function index()
     {
-        return $this->view('slider/index');
+        $slider=$this->sliderModel->fetchAll();
+        $data=["slider"=>$slider];
+        return $this->view('slider/index',$data);
     }
 
     public function create()
@@ -33,5 +35,26 @@ class Sliders extends Controller
         }else{
             header('location: ' .urlRoot.'/public/sliders/create');
         }
+    }
+
+    public function details()
+    {
+        $slider=$this->sliderModel->fetchAll();
+        $data=["slider"=>$slider];
+//        var_dump($data);
+        return $this->view('slider/details',$data);
+
+    }
+
+    public function delete($id)
+    {
+//        var_dump($id);
+        $sliderPrev=$this->sliderModel->fetch($id);
+        if (file_exists("../public/images/slider/".$sliderPrev->image)){
+            unlink("../public/images/slider/".$sliderPrev->image);
+        }
+        $this->sliderModel->delete($id);
+        $_SESSION['delete']="با موفقیت حذف شد";
+        header('location:'.urlRoot."/public/sliders/details");
     }
 }

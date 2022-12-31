@@ -19,7 +19,7 @@ class Database
             $this->dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
-            echo "error: " . $e->getMessage() . "<br>";
+//            echo "error: " . $e->getMessage() . "<br>";
 
         }
 
@@ -54,6 +54,7 @@ class Database
 
     public function fetch()
     {
+        $this->execute();
         return $this->stmt->fetch();
 
     }
