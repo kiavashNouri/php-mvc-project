@@ -109,11 +109,11 @@ class Auths extends Controller
                 $data['password_err'] = 'پسورد صحیح نیست';
 
             }
-
-            if (empty($data['email_err']) && empty(['password_err'])) {
+            if (empty($data['email_err']) && empty($data['password_err'])) {
                 $loginAuth=$this->authModel->login($data);
                 if ($loginAuth){
                     $this->createSessionAuth($loginAuth);
+                    redirect('dashboards/index');
                 }
             }else{
                 return $this->view('Auth/login', $data);
@@ -134,9 +134,19 @@ class Auths extends Controller
 
     public function createSessionAuth($auth)
     {
-        $_SESSION['id']=$auth['id'];
-        $_SESSION['fullName']=$auth['fullName'];
-        $_SESSION['email']=$auth['email'];
+        $_SESSION['id']=$auth->id;
+        $_SESSION['fullName']=$auth->fullName;
+        $_SESSION['email']=$auth->email;
+    }
+
+
+    public function logout()
+    {
+        unset($_SESSION['id']);
+        unset($_SESSION['fullName']);
+        unset($_SESSION['email']);
+        session_destroy();
+        redirect('auths/login');
     }
 
 }

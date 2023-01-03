@@ -8,6 +8,10 @@
                     <h4 class="text-center"><?php echo $_SESSION['register'] ?></h4>
                 </div>
                 <?php unset($_SESSION['register']); endif; ?>
+
+            <?php if (isset($_SESSION['email'])) {
+                redirect('dashboards/index');
+            } ?>
             <div class="row m-0">
                 <div class="col-6 offset-3">
                     <form action="<?php echo urlRoot ?>/public/auths/login" method="post">
@@ -15,7 +19,8 @@
                         <div class="d-block">
                             <label for="email"
                                    class="d-block mb-2">email</label>
-                            <input type="text" name="email" id="email" class="form-control mb-2 <?php echo !empty($data['email_err']) ? 'is-invalid' : ''; ?>"
+                            <input type="text" name="email" id="email"
+                                   class="form-control mb-2 <?php echo !empty($data['email_err']) ? 'is-invalid' : ''; ?>"
                                    value="<?php echo $data['email'] ?>">
                             <div class="invalid-feedback"><?php echo $data['email_err'] ?></div>
 
@@ -23,7 +28,8 @@
                         <div class="d-block">
                             <label for="password"
                                    class="d-block mb-2 ">password</label>
-                            <input type="password" name="password" id="password" class="form-control mb-2 <?php echo !empty($data['password_err']) ? 'is-invalid' : ''; ?>"
+                            <input type="password" name="password" id="password"
+                                   class="form-control mb-2 <?php echo !empty($data['password_err']) ? 'is-invalid' : ''; ?>"
                                    value="<?php echo $data['password'] ?>">
                             <div class="invalid-feedback"><?php echo $data['password_err'] ?></div>
                         </div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-dark">
+<nav class="navbar navbar-expand-sm navbar-light bg-primary">
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -6,24 +6,21 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="<?php echo urlRoot?>/public/home">Home</a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">products</a>
+                <a class="nav-link text-white" href="#">seo</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">contacts</a>
+                <a class="nav-link text-white" href="#">slider</a>
             </li>
         </ul>
 
         <ul class="navbar-nav mt-2 w-100 flex-row-reverse px-4">
             <li class="nav-item">
-                <a class="nav-link text-white <?php echo $_GET['url']=="auths/register"?'btn btn-warning':'ok'; ?>" href="<?php echo urlRoot?>/public/auths/register">register</a>
+                <a class="nav-link text-white" href="<?php echo urlRoot?>/public/home/index">home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white <?php echo $_GET['url']=="auths/login"?'btn btn-success':''; ?>" href="<?php echo urlRoot?>/public/auths/login">login</a>
+                <a class="nav-link text-white" href="<?php echo urlRoot?>/public/auths/login">logout</a>
             </li>
         </ul>
     </div>

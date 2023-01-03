@@ -47,7 +47,7 @@ class Auth
         $this->db->bind(':email',$data['email']);
         $auth=$this->db->fetch();
         if (password_verify($data['password'],$auth->password)){
-            return true;
+            return $auth;
         }else{
             return false;
         }
