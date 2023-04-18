@@ -1,9 +1,9 @@
 <IfModule mod_rewrite.c>
      options -Multiviews
-     RewriteEngine On
+     RewriteEngine on
      RewriteBase /mvc2/public
-     RewriteCond %{REQUEST_FILENAME} !-f
-     RewriteCond %{REQUEST_FILENAME} !-d
-     RewriteCond %{REQUEST_FILENAME} !-l
+     RewriteCond %{Request_FileName} !-f
+     RewriteCond %{Request_FileName} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-l
      RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 </IfModule>

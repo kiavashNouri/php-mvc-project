@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo appName?></title>
     <link rel="stylesheet" href="<?php echo urlRoot ?>/public/css/main.css">
+    <link rel="stylesheet" href="<?php echo urlRoot ?>/public/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?php echo urlRoot ?>/public/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>

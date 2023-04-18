@@ -1,10 +1,8 @@
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
+    loop:true,
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        type: "progressbar",
     },
     navigation: {
         nextEl: ".swiper-button-next",

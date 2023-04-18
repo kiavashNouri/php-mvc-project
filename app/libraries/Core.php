@@ -11,7 +11,7 @@ class Core{
             $this->currentController = ucwords($url[0]);
             unset($url[0]);
         }else{
-            $this->currentController="NotFound";
+            $this->currentController="home";
         }
         require_once "../app/controllers/".$this->currentController.".php";
         $this->currentController=new $this->currentController(); //Category=new Category()
@@ -34,7 +34,7 @@ class Core{
 
         $url=rtrim($_GET['url'],'/');
         $url=filter_var($url,FILTER_SANITIZE_URL);
-//        var_dump($url);
+        var_dump($url);
         return explode("/",$url); //product/index/10  => [0]=>product,[1]=>index [2]=>10
     }
 }

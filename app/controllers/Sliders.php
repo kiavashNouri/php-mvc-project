@@ -29,8 +29,8 @@ class Sliders extends Controller
         $alt=$_POST['alt'];
         $publish=$_POST['publish'];
         $imageData=$this->uploadImage("slider",$image);
-        if ($imageData[1]==true){
-            $this->sliderModel->store($imageData[0],$alt,$publish);
+        if ($imageData==true){
+            $this->sliderModel->store($imageData,$alt,$publish);
             header('location: ' .urlRoot.'/public/sliders/create');
         }else{
             header('location: ' .urlRoot.'/public/sliders/create');

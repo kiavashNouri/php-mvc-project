@@ -6,7 +6,6 @@
                 <div class="col-6 offset-3">
                     <h3 class="text-info text-center">create-seo-dashboard</h3>
                 </div>
-<!--                --><?php //var_dump($data); ?>
                 <div class="col-6 offset-3">
                     <form action="<?php echo urlRoot?>/public/seoes/store" method="post" enctype="multipart/form-data">
                         <div class="d-block">
@@ -17,29 +16,30 @@
                             <div class="invalid-feedback"><?php echo $data['title_err'] ?></div>
                         </div>
                         <div class="d-block">
-                            <label for="title"
-                                   class="d-block mb-2">title</label>
-                            <input type="text" name="title" id="title" class="form-control mb-2 <?php echo !empty($data['title_err']) ? 'is-invalid' : ''; ?>"
-                                   value="<?php echo $data['title'] ?>">
-                            <div class="invalid-feedback"><?php echo $data['title_err'] ?></div>
+                            <label for="author"
+                                   class="d-block mb-2">author</label>
+                            <input type="text" name="author" id="author" class="form-control mb-2 <?php echo !empty($data['author_err']) ? 'is-invalid' : ''; ?>"
+                                   value="<?php echo $data['author'] ?>">
+                            <div class="invalid-feedback"><?php echo $data['author_err'] ?></div>
 
                         </div>
                         <div class="d-block">
-                            <label for="link"
-                                   class="d-block mb-2 ">link</label>
-                            <select name="link" id="link" class="form-select dashboard-form-select">
-                                <option value="<?php echo urlRoot?>/public/seoes/create">seo</option>
-                                <option value="<?php echo urlRoot?>/public/slider/create">slider</option>
-                                <option value="<?php echo urlRoot?>/public/category/create">category</option>
-                                <option value="<?php echo urlRoot?>/public/products/create">product</option>
-                                <option value="<?php echo urlRoot?>/public/abouts/create">about</option>
-                                <option value="<?php echo urlRoot?>/public/contacts/create">contact</option>
-                                <option value="<?php echo urlRoot?>/public/socials/create">social</option>
-                            </select>
-                            <div class="invalid-feedback"><?php echo $data['link_err'] ?></div>
+                            <label for="description"
+                                   class="d-block mb-2">description</label>
+                            <textarea type="text" name="description" id="description" class="form-control mb-2 <?php echo !empty($data['description_err']) ? 'is-invalid' : ''; ?>"><?php echo $data['description'] ?></textarea>
+                            <div class="invalid-feedback"><?php echo $data['description_err'] ?></div>
+
                         </div>
+                        <div class="d-block">
+                            <label for="keywords"
+                                   class="d-block mb-2">keywords</label>
+                            <textarea type="text" name="keywords" id="keywords" class="form-control mb-2 <?php echo !empty($data['keywords_err']) ? 'is-invalid' : ''; ?>"><?php echo $data['keywords'] ?></textarea>
+                            <div class="invalid-feedback"><?php echo $data['keywords_err'] ?></div>
+
+                        </div>
+
                         <div>
-                            <input type="submit" value="Register" class="btn btn-success">
+                            <input type="submit" value="create" class="btn btn-success">
                         </div>
 
                     </form>
